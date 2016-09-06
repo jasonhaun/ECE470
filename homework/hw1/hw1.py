@@ -2,9 +2,13 @@
 
 import math 
 
-def arm3( angle1, angle2, angle3, length1, length2, length3 ):
+def arm3( angle1, angle2, angle3):#, length1, length2, length3 ):
 	"Determine the location of the end effector of a 3 joint 2D arm"
 	# first joint is assumed to be at (0,0)
+	# all arm lengths 1 m
+	length1 = 1
+	length2 = 1
+	length3 = 1 
 	
 	# convert angles to radians for math library
 	angle1 = math.radians( angle1 )
@@ -34,12 +38,14 @@ def arm3( angle1, angle2, angle3, length1, length2, length3 ):
 
 
 # wrapper function for demonstration purposes 
+print("Enter angles in degrees")
 angle1 = input("Angle 1: ")
 angle2 = input("Angle 2: ")
 angle3 = input("Angle 3: ")
-length1 = input("Length 1: ")
-length2 = input("Length 2: ")
-length3 = input("Length 3: ")
+#length1 = input("Length 1: ")
+#length2 = input("Length 2: ")
+#length3 = input("Length 3: ")
 
-print("End Effector at ", arm3(angle1, angle2, angle3, length1, length2, length3))
+print("End Effector at ")
+print(arm3(angle1, angle2, angle3))#, length1, length2, length3))
 
