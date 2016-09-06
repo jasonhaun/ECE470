@@ -38,6 +38,10 @@ def arm3( angle1, angle2, angle3):#, length1, length2, length3 ):
 
 
 # wrapper function for demonstration purposes 
+print("Equation used:")
+print("X = cos(angle1) + cos(angle1 + angle2) + cos(angle1 + angle2 + angle3)")
+print("Y = sin(angle1) + sin(angle1 + angle2) + sin(angle1 + angle2 + angle3)")
+print("All arm lengths set to 1m")
 print("Enter angles in degrees")
 angle1 = input("Angle 1: ")
 angle2 = input("Angle 2: ")
