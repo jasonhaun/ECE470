@@ -16,4 +16,12 @@ state = ha.HUBO_STATE()
 # feed-back will now be refered to as "ref"
 ref = ha.HUBO_REF()
 
+t1 = time.time()
+dt = 0
 while(True):
+	for i in range(0,5):
+		time.sleep(.2)
+		t2 = time.time()
+		dt = t2 - t1
+		t1 = t2
+	print dt

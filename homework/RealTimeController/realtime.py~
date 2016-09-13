@@ -18,6 +18,14 @@ state = ha.HUBO_STATE()
 # feed-back will now be refered to as "ref"
 ref = ha.HUBO_REF()
 
+#class Cycle(threading.Thread):
+#	def __init__(self):
+#		threading.Thread.__init__(self)
+#	
+#	def run(self):
+#		while(True):
+#			signal.alarm(0.2)
+
 def handler(signum, frame):
 	global dt
 	global t1
@@ -35,6 +43,8 @@ signal.signal(signal.SIGALRM, handler)
 count = 1
 dt = 0
 t1 = time.time()
+#timer = Cycle()
+#timer.start()
 signal.setitimer(signal.ITIMER_REAL, 0.2, 0.2)
 while(True):
 	x = 0
