@@ -31,10 +31,10 @@ def handler(signum, frame):
 	elif (count == 5):
 		print dt
 
-signal.signal(signal.SIGALRM, handler)
+signal.signal(signal.SIGVTALRM, handler)
 count = 1
 dt = 0
 t1 = time.time()
-signal.setitimer(signal.ITIMER_REAL, 0.2, 0.2)
+signal.setitimer(signal.ITIMER_VIRTUAL, 0.2, 0.2)
 while(True):
 	x = 0

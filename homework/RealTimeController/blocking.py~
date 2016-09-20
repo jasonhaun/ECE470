@@ -3,8 +3,6 @@ import ach
 import sys
 import time
 from ctypes import *
-import threading
-import signal
 
 # Open Hubo-Ach feed-forward and feed-back (reference and state) channels
 s = ach.Channel(ha.HUBO_CHAN_STATE_NAME)
@@ -18,23 +16,12 @@ state = ha.HUBO_STATE()
 # feed-back will now be refered to as "ref"
 ref = ha.HUBO_REF()
 
-def handler(signum, frame):
-	global dt
-	global t1
-	global count
-	t2 = time.time()
-	dt = t2 - t1
-	t1 = t2
-	count += 1
-	if (count>5):
-		count = 1
-	elif (count == 5):
-		print dt
-
-signal.signal(signal.SIGALRM, handler)
-count = 1
+t1 = time.ctime()
 dt = 0
-t1 = time.time()
-signal.setitimer(signal.ITIMER_REAL, 0.2, 0.2)
 while(True):
-	x = 0
+	for i in range(0,5):
+		time.sleep(.2)
+		t2 = time.ctime()
+		dt = t2 - t1
+		t1 = t2
+	print dt
